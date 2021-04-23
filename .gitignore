@@ -1,12 +1,18 @@
-terraform.*
-.terraform*
-packer-vsphere-iso-windows/win2019.base/variables.json
-packer-vsphere-iso-windows/win2016.base/variables.json
-variables.json
-.terraform.tfstate.lock.info
-# Cache objects
-packer_cache/
+# VS Code
+**.vscode/*
 
-# For built boxes
-*.box
-preseed*
+# Terraform
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+# Ansible
+ansible/.vault_pass
+
+# Packer
+packer/vars.json
