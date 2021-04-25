@@ -7,23 +7,23 @@ resource "vsphere_virtual_machine" "host-01" {
 
   network_interface {
     network_id   = "${data.vsphere_network.network.id}"
-    adapter_type = "${data.vsphere_virtual_machine.Win2016GUI_template.network_interface_types[0]}"
+    adapter_type = "${data.vsphere_virtual_machine.windows_template.network_interface_types[0]}"
   }
 
   num_cpus = "${var.host1_cpu_num}"
   memory   = "${var.host1_mem}"
-  guest_id = "${data.vsphere_virtual_machine.Win2016GUI_template.guest_id}"
-  scsi_type = "${data.vsphere_virtual_machine.Win2016GUI_template.scsi_type}"
+  guest_id = "${data.vsphere_virtual_machine.windows_template.guest_id}"
+  scsi_type = "${data.vsphere_virtual_machine.windows_template.scsi_type}"
 
   disk {
     label            = "disk0"
-    size             = "${data.vsphere_virtual_machine.Win2016GUI_template.disks.0.size}"
-    eagerly_scrub    = "${data.vsphere_virtual_machine.Win2016GUI_template.disks.0.eagerly_scrub}"
-    thin_provisioned = "${data.vsphere_virtual_machine.Win2016GUI_template.disks.0.thin_provisioned}"
+    size             = "${data.vsphere_virtual_machine.windows_template.disks.0.size}"
+    eagerly_scrub    = "${data.vsphere_virtual_machine.windows_template.disks.0.eagerly_scrub}"
+    thin_provisioned = "${data.vsphere_virtual_machine.windows_template.disks.0.thin_provisioned}"
   }
 
   clone {
-    template_uuid = "${data.vsphere_virtual_machine.Win2016GUI_template.id}"
+    template_uuid = "${data.vsphere_virtual_machine.windows_template.id}"
 
     customize {
       windows_options {

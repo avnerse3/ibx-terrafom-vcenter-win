@@ -31,7 +31,7 @@ data "vsphere_network" "network" {
 }
 
 # Fetch template vm data
-data "vsphere_virtual_machine" "Win2016GUI_template" {
+data "vsphere_virtual_machine" "windows_template" {
   name          = "${var.vsphere_template_name}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
