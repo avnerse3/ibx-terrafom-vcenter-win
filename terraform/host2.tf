@@ -43,12 +43,12 @@ resource "vsphere_virtual_machine" "host-02" {
       }
 
       network_interface {
-        ipv4_address    = "${var.host2_IP}"
-        ipv4_netmask    = "${var.netmask}"
-        dns_server_list = ["${var.dns_server}"]
+        # ipv4_address    = "${var.host2_IP}"
+        # ipv4_netmask    = "${var.netmask}"
+        # dns_server_list = ["${var.dns_server}"]
       }
 
-      ipv4_gateway = "${var.def_gw}"
+      # ipv4_gateway = "${var.def_gw}"
     }
   }
 }
